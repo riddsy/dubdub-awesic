@@ -1,6 +1,6 @@
-import Button from './Components/Controls/Button/Button';
-import Toggle from './Components/Controls/Toggle/Toggle';
-import Label from './Components/UI/Label/Label';
+import Button from './Components/Controls/Button';
+import Toggle from './Components/Controls/Toggle';
+import Label from './Components/UI/Label';
 
 function App() {
   return (
