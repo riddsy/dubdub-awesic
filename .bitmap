@@ -37,17 +37,17 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "dubdub.awesic/toggle@1.0.0": {
+    "dubdub.awesic/toggle@1.0.1": {
         "files": [
             {
+                "name": "README.md",
                 "relativePath": "src/components/Toggle/README.md",
-                "test": false,
-                "name": "README.md"
+                "test": false
             },
             {
+                "name": "index.js",
                 "relativePath": "src/components/Toggle/index.js",
-                "test": false,
-                "name": "index.js"
+                "test": false
             }
         ],
         "mainFile": "src/components/Toggle/index.js",
