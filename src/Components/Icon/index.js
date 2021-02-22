@@ -170,7 +170,7 @@ const Icon = ({
     </IconWrapper>
   );
 };
-//impelment the icons instead of iconclass
+
 Icon.propTypes = {
   size: PropTypes.number,
   padding: PropTypes.string,

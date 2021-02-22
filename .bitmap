@@ -19,7 +19,7 @@
         "origin": "AUTHORED",
         "exported": true
     },
-    "dubdub.awesic/icon@0.0.2": {
+    "dubdub.awesic/icon@0.0.3": {
         "files": [
             {
                 "relativePath": "src/Components/Icon/README.md",

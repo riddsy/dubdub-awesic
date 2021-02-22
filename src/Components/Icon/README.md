@@ -16,6 +16,20 @@ It's a subset of react-icons, so that you can just use Icon's and it's already g
 />
 ```
 
+## StyledComponents Example
+
+```javascript
+<Icon
+  iconType='user'
+  size={12}
+  iconColor={`rgb(${theme.colors.primary[2]})`}
+  backgroundColor={`rgb(${theme.colors.neutral[4]})`}
+  margin='auto'
+  borderRadius='50%'
+  padding='2rem'
+/>
+```
+
 # Configs
 
 ### Icon Type
@@ -65,3 +79,7 @@ A string, so can be rem, px or % - do 50% for a circle
 - **Default Value**: '0.25rem'
 
 goes right into css, so put whatever you like, px, rem, ems etc.
+
+```
+
+```
