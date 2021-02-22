@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 import {
   AiOutlineTwitter,
@@ -72,115 +72,36 @@ import {
 } from 'react-icons/bs';
 import { IoIosAddCircleOutline } from 'react-icons/io';
 
-const WrapperBackgroundStyles = ({ background }) => {
-  if (background === 'light') {
-    return css`
-      background-color: ${(props) =>
-        `rgba(${props.theme.colors.neutral[5]}, 1)`};
-    `;
-  } else if (background === 'dark') {
-    return css`
-      background-color: ${(props) =>
-        `rgba(${props.theme.colors.neutral[0]}, 1)`};
-    `;
-  } else if (background === 'primary') {
-    return css`
-      background-color: ${(props) =>
-        `rgba(${props.theme.colors.primary[0]}, 1)`};
-    `;
-  } else if (background === 'alt') {
-    return css`
-      background-color: ${(props) =>
-        `rgba(${props.theme.colors.secondary[0]}, 1)`};
-    `;
-  } else if (background === 'lightGrey') {
-    return css`
-      background-color: ${(props) =>
-        `rgba(${props.theme.colors.neutral[4]}, 1)`};
-    `;
-  } else if (background === 'darkOverlay') {
-    return css`
-      background-color: ${(props) =>
-        `rgba(${props.theme.colors.neutral[2]}, 0.7)`};
-    `;
-  } else if (background === 'danger') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.danger[0]}, 1)`};
-    `;
-  } else if (background === 'success') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.success[0]}, 1)`};
-    `;
-  } else {
-    return css`
-      background-color: none;
-    `;
-  }
-};
-
-const IconColorStyles = ({ color }) => {
-  if (color === 'light') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.neutral[5]}, 1)`};
-    `;
-  } else if (color === 'darkOverlay') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.neutral[0]}, 1)`};
-    `;
-  } else if (color === 'primary') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.primary[2]}, 1)`};
-    `;
-  } else if (color === 'alt') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.secondary[0]}, 1)`};
-    `;
-  } else if (color === 'lightGrey') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.neutral[3]}, 1)`};
-    `;
-  } else if (color === 'midGrey') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.neutral[2]}, 1)`};
-    `;
-  } else if (color === 'danger') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.danger[0]}, 1)`};
-    `;
-  } else if (color === 'success') {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.success[0]}, 1)`};
-    `;
-  } else {
-    return css`
-      color: ${(props) => `rgba(${props.theme.colors.neutral[2]}, 1)`};
-    `;
-  }
-};
-
 const IconWrapper = styled.div`
-  border-radius: ${(props) =>
-    props.isCircle ? '50%' : props.theme.styles.borderRadius};
-  font-size: ${(props) => (props.size ? `${props.size}rem` : '1rem')};
-  padding: ${(props) => (props.background ? '0.5rem 0.5rem 0 0.5rem;' : '0')};
-  padding-bottom: ${(props) => (props.isCircle ? '0.1rem' : '')};
-  margin: ${(props) => (props.margin ? props.margin : '')};
-  display: flex;
-  ${WrapperBackgroundStyles}
   > * {
-    ${IconColorStyles}
+    font-size: ${(props) => (props.size ? `${props.size}rem` : '1rem')};
+    padding: ${(props) => (props.padding ? props.padding : '0.25rem')};
+    margin: ${(props) => (props.margin ? props.margin : 'auto')};
+    border-radius: ${(props) => (props.borderRadius ? props.borderRadius : '')};
+    background-color: ${(props) =>
+      props.backgroundColor ? props.backgroundColor : ''};
+    color: ${(props) => (props.iconColor ? props.iconColor : 'black')};
     align-self: center;
   }
 `;
 
-const Icon = ({ iconType, size, color, background, isCircle, margin }) => {
+const Icon = ({
+  iconType,
+  size,
+  iconColor,
+  backgroundColor,
+  margin,
+  borderRadius,
+  padding,
+}) => {
   return (
     <IconWrapper
-      background={background}
       size={size}
-      color={color}
-      isCircle={isCircle}
+      iconColor={iconColor}
+      backgroundColor={backgroundColor}
       margin={margin}
+      borderRadius={borderRadius}
+      padding={padding}
     >
       {iconType === 'twitter' && <AiOutlineTwitter />}
       {iconType === 'facebook' && <FaFacebookF />}
@@ -251,6 +172,11 @@ const Icon = ({ iconType, size, color, background, isCircle, margin }) => {
 };
 //impelment the icons instead of iconclass
 Icon.propTypes = {
+  size: PropTypes.number,
+  padding: PropTypes.string,
+  borderRadius: PropTypes.string,
+  iconColor: PropTypes.string,
+  backgroundColor: PropTypes.string,
   margin: PropTypes.string,
   iconType: PropTypes.oneOf([
     'twitter',
@@ -317,27 +243,7 @@ Icon.propTypes = {
     'wallet',
     'upload',
     'download',
-  ]),
-  size: PropTypes.number.isRequired,
-  isCircle: PropTypes.bool,
-  color: PropTypes.oneOf([
-    'light',
-    'dark',
-    'primary',
-    'alt',
-    'lightGrey',
-    'midGrey',
-    'danger',
-    'success',
-  ]),
-  background: PropTypes.oneOf([
-    'light',
-    'dark',
-    'primary',
-    'alt',
-    'lightGrey',
-    'darkOverlay',
-  ]),
+  ]).isRequired,
 };
 
 export default Icon;
