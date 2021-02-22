@@ -19,6 +19,24 @@
         "origin": "AUTHORED",
         "exported": true
     },
+    "dubdub.awesic/icon@0.0.1": {
+        "files": [
+            {
+                "relativePath": "src/Components/Icon/README.md",
+                "test": false,
+                "name": "README.md"
+            },
+            {
+                "relativePath": "src/Components/Icon/index.js",
+                "test": false,
+                "name": "index.js"
+            }
+        ],
+        "mainFile": "src/Components/Icon/index.js",
+        "trackDir": "src/Components/Icon",
+        "origin": "AUTHORED",
+        "exported": true
+    },
     "dubdub.awesic/label@1.0.0": {
         "files": [
             {
