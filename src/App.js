@@ -1,9 +1,5 @@
 import styled from 'styled-components';
 
-import Button from './Components/Button';
-import Toggle from './Components/Toggle';
-import Label from './Components/Label';
-
 import Icon from './Components/Icon';
 
 const Wrapper = styled.div`
