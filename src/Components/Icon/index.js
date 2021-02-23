@@ -74,111 +74,119 @@ import { IoIosAddCircleOutline } from 'react-icons/io';
 
 const IconWrapper = styled.div`
   > * {
-    font-size: ${(props) => (props.size ? `${props.size}rem` : '1rem')};
-    padding: ${(props) => (props.padding ? props.padding : '0.25rem')};
-    margin: ${(props) => (props.margin ? props.margin : 'auto')};
-    border-radius: ${(props) => (props.borderRadius ? props.borderRadius : '')};
-    background-color: ${(props) =>
-      props.backgroundColor ? props.backgroundColor : ''};
-    color: ${(props) => (props.iconColor ? props.iconColor : 'black')};
+    font-size: ${(props) => `${props.size}rem`};
+    padding: ${(props) => props.padding};
+    margin: ${(props) => props.margin};
+    border-radius: ${(props) => props.borderradius};
+    background-color: ${(props) => props.backgroundcolor};
+    color: ${(props) => props.iconcolor};
     align-self: center;
   }
 `;
 
 const Icon = ({
-  iconType,
+  icontype,
   size,
-  iconColor,
-  backgroundColor,
+  iconcolor,
+  backgroundcolor,
   margin,
-  borderRadius,
+  borderradius,
   padding,
 }) => {
   return (
     <IconWrapper
       size={size}
-      iconColor={iconColor}
-      backgroundColor={backgroundColor}
+      iconcolor={iconcolor}
+      backgroundcolor={backgroundcolor}
       margin={margin}
-      borderRadius={borderRadius}
+      borderradius={borderradius}
       padding={padding}
     >
-      {iconType === 'twitter' && <AiOutlineTwitter />}
-      {iconType === 'facebook' && <FaFacebookF />}
-      {iconType === 'linkedin' && <FaLinkedinIn />}
-      {iconType === 'mail' && <AiOutlineMail />}
-      {iconType === 'search' && <AiOutlineSearch />}
-      {iconType === 'upArrow' && <AiOutlineArrowUp />}
-      {iconType === 'rightArrow' && <AiOutlineArrowRight />}
-      {iconType === 'downArrow' && <AiOutlineArrowDown />}
-      {iconType === 'clock' && <AiOutlineClockCircle />}
-      {iconType === 'user' && <FaUserAlt />}
-      {iconType === 'quote' && <FaQuoteRight />}
-      {iconType === 'phone' && <FaPhone />}
-      {iconType === 'add' && <AiOutlineUserAdd />}
-      {iconType === 'close' && <AiOutlineClose />}
-      {iconType === 'downcaret' && <AiOutlineCaretDown />}
-      {iconType === 'bulletpoint' && <AiOutlineRightCircle />}
-      {iconType === 'dashboard' && <AiOutlineDashboard />}
-      {iconType === 'userlist' && <AiOutlineUsergroupAdd />}
-      {iconType === 'tasklist' && <AiOutlineOrderedList />}
-      {iconType === 'profile' && <AiOutlineLock />}
-      {iconType === 'calendar' && <AiOutlineCalendar />}
-      {iconType === 'addresscard' && <FaRegAddressCard />}
-      {iconType === 'fileupload' && <AiOutlineFileText />}
-      {iconType === 'fileinvoice' && <FaFileInvoice />}
-      {iconType === 'folderopen' && <AiOutlineFolderOpen />}
-      {iconType === 'logout' && <AiOutlineLogin />}
-      {iconType === 'exclamationTriangle' && <AiOutlineExclamationCircle />}
-      {iconType === 'checkCircle' && <BsCheckCircle />}
-      {iconType === 'stickyNote' && <FaRegStickyNote />}
-      {iconType === 'calculator' && <AiOutlineCalculator />}
-      {iconType === 'bookmark' && <BsBookmark />}
-      {iconType === 'ellipsisV' && <FaEllipsisV />}
-      {iconType === 'toggleOff' && <BsToggleOff />}
-      {iconType === 'toggleOn' && <BsToggleOn />}
-      {iconType === 'infoCircle' && <AiOutlineInfoCircle />}
-      {iconType === 'history' && <AiOutlineHistory />}
-      {iconType === 'filePdf' && <AiOutlineFilePdf />}
-      {iconType === 'fileImage' && <AiOutlineFileImage />}
-      {iconType === 'cog' && <FaCog />}
-      {iconType === 'times' && <FaTimes />}
-      {iconType === 'settings' && <AiOutlineSetting />}
-      {iconType === 'reconcile' && <AiOutlineReconciliation />}
-      {iconType === 'solution' && <AiOutlineSolution />}
-      {iconType === 'hdd' && <AiOutlineHdd />}
-      {iconType === 'global' && <AiOutlineGlobal />}
-      {iconType === 'asterisk' && <FaAsterisk />}
-      {iconType === 'copy' && <AiOutlineCopy />}
-      {iconType === 'copied' && <AiFillCopy />}
-      {iconType === 'next' && <AiOutlineArrowRight />}
-      {iconType === 'back' && <AiOutlineArrowLeft />}
-      {iconType === 'trash' && <BsTrash />}
-      {iconType === 'plus' && <IoIosAddCircleOutline />}
-      {iconType === 'userCircle' && <FaRegUserCircle />}
-      {iconType === 'notification' && <AiOutlineBell />}
-      {iconType === 'options' && <AiOutlineAppstoreAdd />}
-      {iconType === 'wallet' && <AiOutlineWallet />}
-      {iconType === 'upload' && <AiOutlineUpload />}
-      {iconType === 'download' && <AiOutlineDownload />}
-      {iconType === 'questionCircle' && <AiOutlineQuestionCircle />}
-      {iconType === 'swap' && <AiOutlineSwap />}
-      {iconType === 'userOutline' && <AiOutlineUser />}
-      {iconType === 'outlineBlock' && <AiOutlineBlock />}
-      {iconType === 'pie' && <AiOutlinePieChart />}
-      {iconType === 'comments' && <AiOutlineComment />}
+      {icontype === 'twitter' && <AiOutlineTwitter />}
+      {icontype === 'facebook' && <FaFacebookF />}
+      {icontype === 'linkedin' && <FaLinkedinIn />}
+      {icontype === 'mail' && <AiOutlineMail />}
+      {icontype === 'search' && <AiOutlineSearch />}
+      {icontype === 'upArrow' && <AiOutlineArrowUp />}
+      {icontype === 'rightArrow' && <AiOutlineArrowRight />}
+      {icontype === 'downArrow' && <AiOutlineArrowDown />}
+      {icontype === 'clock' && <AiOutlineClockCircle />}
+      {icontype === 'user' && <FaUserAlt />}
+      {icontype === 'quote' && <FaQuoteRight />}
+      {icontype === 'phone' && <FaPhone />}
+      {icontype === 'add' && <AiOutlineUserAdd />}
+      {icontype === 'close' && <AiOutlineClose />}
+      {icontype === 'downcaret' && <AiOutlineCaretDown />}
+      {icontype === 'bulletpoint' && <AiOutlineRightCircle />}
+      {icontype === 'dashboard' && <AiOutlineDashboard />}
+      {icontype === 'userlist' && <AiOutlineUsergroupAdd />}
+      {icontype === 'tasklist' && <AiOutlineOrderedList />}
+      {icontype === 'profile' && <AiOutlineLock />}
+      {icontype === 'calendar' && <AiOutlineCalendar />}
+      {icontype === 'addresscard' && <FaRegAddressCard />}
+      {icontype === 'fileupload' && <AiOutlineFileText />}
+      {icontype === 'fileinvoice' && <FaFileInvoice />}
+      {icontype === 'folderopen' && <AiOutlineFolderOpen />}
+      {icontype === 'logout' && <AiOutlineLogin />}
+      {icontype === 'exclamationTriangle' && <AiOutlineExclamationCircle />}
+      {icontype === 'checkCircle' && <BsCheckCircle />}
+      {icontype === 'stickyNote' && <FaRegStickyNote />}
+      {icontype === 'calculator' && <AiOutlineCalculator />}
+      {icontype === 'bookmark' && <BsBookmark />}
+      {icontype === 'ellipsisV' && <FaEllipsisV />}
+      {icontype === 'toggleOff' && <BsToggleOff />}
+      {icontype === 'toggleOn' && <BsToggleOn />}
+      {icontype === 'infoCircle' && <AiOutlineInfoCircle />}
+      {icontype === 'history' && <AiOutlineHistory />}
+      {icontype === 'filePdf' && <AiOutlineFilePdf />}
+      {icontype === 'fileImage' && <AiOutlineFileImage />}
+      {icontype === 'cog' && <FaCog />}
+      {icontype === 'times' && <FaTimes />}
+      {icontype === 'settings' && <AiOutlineSetting />}
+      {icontype === 'reconcile' && <AiOutlineReconciliation />}
+      {icontype === 'solution' && <AiOutlineSolution />}
+      {icontype === 'hdd' && <AiOutlineHdd />}
+      {icontype === 'global' && <AiOutlineGlobal />}
+      {icontype === 'asterisk' && <FaAsterisk />}
+      {icontype === 'copy' && <AiOutlineCopy />}
+      {icontype === 'copied' && <AiFillCopy />}
+      {icontype === 'next' && <AiOutlineArrowRight />}
+      {icontype === 'back' && <AiOutlineArrowLeft />}
+      {icontype === 'trash' && <BsTrash />}
+      {icontype === 'plus' && <IoIosAddCircleOutline />}
+      {icontype === 'userCircle' && <FaRegUserCircle />}
+      {icontype === 'notification' && <AiOutlineBell />}
+      {icontype === 'options' && <AiOutlineAppstoreAdd />}
+      {icontype === 'wallet' && <AiOutlineWallet />}
+      {icontype === 'upload' && <AiOutlineUpload />}
+      {icontype === 'download' && <AiOutlineDownload />}
+      {icontype === 'questionCircle' && <AiOutlineQuestionCircle />}
+      {icontype === 'swap' && <AiOutlineSwap />}
+      {icontype === 'userOutline' && <AiOutlineUser />}
+      {icontype === 'outlineBlock' && <AiOutlineBlock />}
+      {icontype === 'pie' && <AiOutlinePieChart />}
+      {icontype === 'comments' && <AiOutlineComment />}
     </IconWrapper>
   );
+};
+
+Icon.defaultProps = {
+  size: 1,
+  iconcolor: 'black',
+  backgroundcolor: '',
+  borderradius: '',
+  margin: 'auto',
+  padding: '0.25rem',
 };
 
 Icon.propTypes = {
   size: PropTypes.number,
   padding: PropTypes.string,
-  borderRadius: PropTypes.string,
-  iconColor: PropTypes.string,
-  backgroundColor: PropTypes.string,
+  borderradius: PropTypes.string,
+  iconcolor: PropTypes.string,
+  backgroundcolor: PropTypes.string,
   margin: PropTypes.string,
-  iconType: PropTypes.oneOf([
+  icontype: PropTypes.oneOf([
     'twitter',
     'comments',
     'pie',

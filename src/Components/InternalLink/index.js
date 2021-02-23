@@ -1,8 +1,9 @@
-import React, { Children } from 'react';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const StyledButton = styled.button`
+export const StyledButton = styled((props) => <Link {...props} />)`
   font-size: ${(props) => `${props.fontsize}rem`};
   border-radius: ${(props) => props.borderradius};
   margin: ${(props) => props.margin};
@@ -28,7 +29,7 @@ export const StyledButton = styled.button`
     0 6px 6px rgba(0, 0, 0, 0.23);
 `;
 
-const Button = ({
+const InternalLink = ({
   fontsize,
   borderradius,
   margin,
@@ -38,6 +39,7 @@ const Button = ({
   disabled,
   block,
   children,
+  to,
 }) => {
   return (
     <StyledButton
@@ -49,13 +51,14 @@ const Button = ({
       textcolor={textcolor}
       disabled={disabled}
       block={block}
+      to={to}
     >
       {children}
     </StyledButton>
   );
 };
 
-Button.defaultProps = {
+InternalLink.defaultProps = {
   fontsize: 1,
   borderradius: '5px',
   margin: 'auto',
@@ -66,7 +69,7 @@ Button.defaultProps = {
   block: 'false',
 };
 
-Button.propTypes = {
+InternalLink.propTypes = {
   fontsize: PropTypes.number,
   borderradius: PropTypes.string,
   margin: PropTypes.string,
@@ -77,4 +80,4 @@ Button.propTypes = {
   block: PropTypes.string,
 };
 
-export default Button;
+export default InternalLink;

@@ -1,8 +1,8 @@
-import React, { Children } from 'react';
+import React from 'react';
 import styled from 'styled-components';
 import PropTypes from 'prop-types';
 
-export const StyledButton = styled.button`
+export const StyledButton = styled.a`
   font-size: ${(props) => `${props.fontsize}rem`};
   border-radius: ${(props) => props.borderradius};
   margin: ${(props) => props.margin};
@@ -17,6 +17,7 @@ export const StyledButton = styled.button`
   display: flex;
   justify-content: center;
   align-items: center;
+  text-decoration: none;
   outline: none;
   border: none;
   text-transform: uppercase;
@@ -28,7 +29,7 @@ export const StyledButton = styled.button`
     0 6px 6px rgba(0, 0, 0, 0.23);
 `;
 
-const Button = ({
+const ExternalLink = ({
   fontsize,
   borderradius,
   margin,
@@ -55,7 +56,7 @@ const Button = ({
   );
 };
 
-Button.defaultProps = {
+ExternalLink.defaultProps = {
   fontsize: 1,
   borderradius: '5px',
   margin: 'auto',
@@ -66,7 +67,7 @@ Button.defaultProps = {
   block: 'false',
 };
 
-Button.propTypes = {
+ExternalLink.propTypes = {
   fontsize: PropTypes.number,
   borderradius: PropTypes.string,
   margin: PropTypes.string,
@@ -77,4 +78,4 @@ Button.propTypes = {
   block: PropTypes.string,
 };
 
-export default Button;
+export default ExternalLink;

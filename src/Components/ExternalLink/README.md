@@ -1,20 +1,21 @@
-# Button
+# Internal Link
 
-Just a simple <button> with some styles
+Just a simple <a> with some styles so it looks like a button
 
 ## Example
 
 ```javascript
-<Button
+<InternalLink
   fontsize={3.7}
   textcolor='pink'
   backgroundcolor='green'
   margin='auto'
   borderradius='25px'
   padding='2rem'
+  to='/google'
 >
-  button
-</Button>
+  Internal Link
+</InternalLink>
 ```
 
 ## StyledComponents Example
@@ -45,7 +46,7 @@ straight css for making massive or small buttons
 
 straight css, so set a color name, or hexcode or something
 
-### textcolor:
+### Textcolor:
 
 straight css, so set a color name, or hexcode or something 'black',
 
